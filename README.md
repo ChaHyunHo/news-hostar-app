@@ -1,8 +1,7 @@
-# 리액트 외부 API 연동 뉴스 뷰어..
+# 리액트 외부 API 연동 뉴스 뷰어 진행..
 
-
-
-#### Promise 연습
+##  연습 문법
+### Promise 연습
 ~~~
 function increase(number) {
     const promise = new Promise((resolve, reject) => {
@@ -42,3 +41,33 @@ increase(0).then(number => {
 });
 
 ~~~
+
+### async/await 연습
+#### async/await는 Promise를 더욱 쉽게 사용할 수 있도록 해주는 ES2017(ES8) 문법이다.
+
+~~~
+// 위 then사용 과 똑같은 과정
+// then을 사용하지 않고 await을 함수앞에 선언하고 그걸 변수에 담아서 사용가능
+async function runTasks() {
+    try {
+        let result = await increase(0);
+        console.log(result);
+        
+        result = await increase(result);
+        console.log(result);
+        
+        result = await increase(result);
+        console.log(result);
+        
+    } catch(e) {
+        console.log(e);
+    }
+}
+~~~
+
+### axios로 API 호출해서 데이터 받아 오기
+~~~
+노드모듈 추가
+yarn add axios 
+~~~
+
