@@ -1,10 +1,16 @@
-import { useState } from 'react';
-import axios from 'axios';
-import NewList from "./components/NewsList";
+import { useCallback, useEffect, useState } from 'react';
+import NewList from './components/NewsList';
+import Categories from './components/Categories';
 
 const App = () => {
+  const [category, setCategory] = useState('all');
+  const onSelect = useCallback((category) => setCategory(category), []);
+
   return (
-      <NewList/>
+    <>
+      <Categories category={category} onSelect={onSelect} />
+      <NewList category={category} />
+    </>
   );
 };
 
