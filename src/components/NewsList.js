@@ -31,7 +31,7 @@ const NewList = ({ category }) => {
     const fetchData = async () => {
       setLoding(true);
       try {
-        const query = category === 'all'? '' : `&category=${category}`;
+        const query = category === 'all' ? '' : `&category=${category}`;
         const response = await axios.get(
           `https://newsapi.org/v2/top-headlines?country=kr${query}&apikey=4e8e1a8c2f634812a9489e0af6f07c21`,
         );
@@ -41,7 +41,7 @@ const NewList = ({ category }) => {
       }
       setLoding(false);
     };
-      fetchData();
+    fetchData();
   }, [category]);
 
   console.log(articles);
