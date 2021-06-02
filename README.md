@@ -71,3 +71,10 @@ async function runTasks() {
 yarn add axios 
 ~~~
 
+#### 주의사항
+~~~
+API를 연동하여 개발할 때 절대 잊지 말아야할 유의 사항은 
+useEffect에 등록하는 함수는 async로 작성하면 안된다.
+그 대신 함수 내부에 async 함수를 따로 만들어 주어야한다.
+~~~
+
